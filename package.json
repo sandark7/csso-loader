@@ -1,0 +1,32 @@
+{
+  "name": "csso-loader",
+  "version": "0.0.1",
+  "description": "CSSO loader for webpack",
+  "keywords": [
+    "webpack",
+    "loader",
+    "csso"
+  ],
+  "homepage": "https://github.com/sandark7/csso-loader",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sandark7/csso-loader.git"
+  },
+  "author": {
+    "name": "Andrew Smirnov",
+    "email": "sandark7@gmail.com",
+    "url": "https://github.com/sandark7"
+  },
+  "main": "index.js",
+  "peerDependencies": {
+    "webpack": "^1.13.0",
+    "loader-utils": "^0.2.14"
+  },
+  "dependencies": {
+    "csso": "^2.0.0"
+  },
+  "engines": {
+    "node": ">=0.12.0"
+  },
+  "license": "MIT"
+}
