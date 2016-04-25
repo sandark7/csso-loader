@@ -1,13 +1,19 @@
 {
   "name": "csso-loader",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "CSSO loader module for webpack",
   "keywords": [
     "webpack",
     "loader",
     "csso"
   ],
+  "scripts": {
+    "test": "mocha -R spec ./test.js"
+  },
   "homepage": "https://github.com/sandark7/csso-loader",
+  "bugs": {
+    "url": "https://github.com/sandark7/csso-loader/issues"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/sandark7/csso-loader.git"
@@ -23,6 +29,11 @@
   },
   "dependencies": {
     "loader-utils": "^0.2.14"
+  },
+  "devDependencies": {
+    "should": "8.3.1",
+    "mocha": "2.4.5",
+    "test-console": "1.0.0"
   },
   "engines": {
     "node": ">=0.12.0"

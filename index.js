@@ -18,14 +18,14 @@ module.exports = function(source) {
     options.debug = query.debug;
   }
 
-  if (!query.restructure) {
+  if (query.restructure === false) {
     options.restructure = false;
   }
 
   try {
     result = csso.minify(source, options);
   } catch (error) {
-    console.log([' ',
+    console.error([' ',
       error.name + ' ' + filename + ': ' + error.message,
       'Line: ' + error.parseError.line,
       'Column: ' + error.parseError.column
