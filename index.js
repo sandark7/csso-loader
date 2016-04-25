@@ -18,8 +18,8 @@ module.exports = function(source) {
     options.debug = query.debug;
   }
 
-  if (query.restructure === false) {
-    options.restructure = false;
+  if (query.restructure !== undefined) {
+    options.restructure = query.restructure;
   }
 
   try {

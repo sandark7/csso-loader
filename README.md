@@ -1,4 +1,7 @@
-# csso-loader [![NPM version](https://img.shields.io/npm/v/csso-loader.svg)](https://www.npmjs.com/package/csso-loader) [![Dependency Status](https://img.shields.io/gemnasium/SanDark7/csso-loader.svg)](https://gemnasium.com/SanDark7/csso-loader)
+# csso-loader
+[![NPM version](https://img.shields.io/npm/v/csso-loader.svg)](https://www.npmjs.com/package/csso-loader)
+[![Build Status](https://img.shields.io/travis/SanDark7/csso-loader.svg)](https://travis-ci.org/SanDark7/csso-loader)
+[![Dependency Status](https://img.shields.io/gemnasium/SanDark7/csso-loader.svg)](https://gemnasium.com/SanDark7/csso-loader)
 
 > [CSSO](https://www.npmjs.com/package/csso) loader module for [webpack](https://www.npmjs.com/package/webpack)
 

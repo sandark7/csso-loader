@@ -1,0 +1,15 @@
+# 0.0.4
+
+* Added CHANGELOG.
+
+# 0.0.3
+
+* Added tests.
+
+# 0.0.2
+
+* Added README and edited functionality.
+
+# 0.0.1
+
+* Initial release.

@@ -1,11 +1,13 @@
 {
   "name": "csso-loader",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "CSSO loader module for webpack",
   "keywords": [
     "webpack",
     "loader",
-    "csso"
+    "csso",
+    "css",
+    "minify"
   ],
   "scripts": {
     "test": "mocha -R spec ./test.js"
@@ -24,10 +26,8 @@
     "url": "https://github.com/sandark7"
   },
   "main": "index.js",
-  "peerDependencies": {
-    "csso": "^2.0.0"
-  },
   "dependencies": {
+    "csso": "^2.0.0",
     "loader-utils": "^0.2.14"
   },
   "devDependencies": {
@@ -36,7 +36,7 @@
     "test-console": "1.0.0"
   },
   "engines": {
-    "node": ">=0.12.0"
+    "node": ">=0.10.0"
   },
   "license": "MIT"
 }
