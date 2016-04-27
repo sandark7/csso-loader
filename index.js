@@ -6,6 +6,7 @@ var loaderUtils = require('loader-utils');
 
 module.exports = function(source) {
   var query = loaderUtils.parseQuery(this.query);
+  var cssoOptions = this.options ? this.options.csso : false;
   var filename = path.basename(this.resourcePath);
   var options = {};
   var result;
@@ -14,12 +15,21 @@ module.exports = function(source) {
     this.cacheable();
   }
 
-  if ([true, '1', '2', '3'].indexOf(query.debug) !== -1) {
+  if (typeof query.debug === 'boolean') {
     options.debug = query.debug;
   }
 
-  if (query.restructure !== undefined) {
+  if (typeof query.restructure === 'boolean') {
     options.restructure = query.restructure;
+  }
+
+  if (typeof cssoOptions === 'object') {
+    if (typeof cssoOptions.debug === 'boolean' || [1, 2, 3].indexOf(cssoOptions.debug) !== -1) {
+      options.debug = cssoOptions.debug;
+    }
+    if (typeof cssoOptions.restructure === 'boolean') {
+      options.restructure = cssoOptions.restructure;
+    }
   }
 
   try {

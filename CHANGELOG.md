@@ -1,3 +1,7 @@
+# 0.0.5
+
+* Added functionality of csso object
+
 # 0.0.4
 
 * Added CHANGELOG.

@@ -1,7 +1,7 @@
 # csso-loader
 [![NPM version](https://img.shields.io/npm/v/csso-loader.svg)](https://www.npmjs.com/package/csso-loader)
-[![Build Status](https://img.shields.io/travis/SanDark7/csso-loader.svg)](https://travis-ci.org/SanDark7/csso-loader)
-[![Dependency Status](https://img.shields.io/gemnasium/SanDark7/csso-loader.svg)](https://gemnasium.com/SanDark7/csso-loader)
+[![Build Status](https://img.shields.io/travis/sandark7/csso-loader.svg)](https://travis-ci.org/sandark7/csso-loader)
+[![Dependency Status](https://img.shields.io/gemnasium/sandark7/csso-loader.svg)](https://gemnasium.com/sandark7/csso-loader)
 
 > [CSSO](https://www.npmjs.com/package/csso) loader module for [webpack](https://www.npmjs.com/package/webpack)
 
@@ -42,7 +42,7 @@ module.exports = {
 
 Default: `true`
 
-The default is to use structure minimization for maximum compression.
+By default CSSO uses structure minimization for maximum compression.
 Pass `-restructure` instead if you want to disable this feature.
 
 ``` javascript
@@ -55,6 +55,25 @@ module.exports = {
         loader: 'css-loader!csso-loader?-restructure',
       }
     ]
+  }
+};
+```
+
+Also you can pass `restructure` boolean parameter to `csso` object in webpack options.
+
+``` javascript
+module.exports = {
+  ...
+  module: {
+    loaders: [
+      {
+        test: /\.css$/,
+        loader: 'css-loader!csso-loader',
+      }
+    ]
+  },
+  csso: {
+    restructure: false
   }
 };
 ```
@@ -79,7 +98,8 @@ module.exports = {
 };
 ```
 
-You can pass to `debug` a positive number from 1 to 3 (greater number for more details).
+Also you can pass `debug` parameter to `csso` object in webpack options.
+It can be boolean or a positive number from 1 to 3 (greater number for more details).
 
 ``` javascript
 module.exports = {
@@ -88,9 +108,12 @@ module.exports = {
     loaders: [
       {
         test: /\.css$/,
-        loader: 'css-loader!csso-loader?debug=3',
+        loader: 'css-loader!csso-loader',
       }
     ]
+  },
+  csso: {
+    debug: 3
   }
 };
 ```
