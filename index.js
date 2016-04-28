@@ -30,6 +30,9 @@ module.exports = function(source) {
     if (typeof cssoOptions.restructure === 'boolean') {
       options.restructure = cssoOptions.restructure;
     }
+    if (typeof cssoOptions.usage === 'object') {
+      options.usage = cssoOptions.usage;
+    }
   }
 
   try {

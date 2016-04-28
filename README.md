@@ -1,7 +1,7 @@
 # csso-loader
 [![NPM version](https://img.shields.io/npm/v/csso-loader.svg)](https://www.npmjs.com/package/csso-loader)
 [![Build Status](https://img.shields.io/travis/sandark7/csso-loader.svg)](https://travis-ci.org/sandark7/csso-loader)
-[![Dependency Status](https://img.shields.io/gemnasium/sandark7/csso-loader.svg)](https://gemnasium.com/sandark7/csso-loader)
+[![Code Climate](https://codeclimate.com/github/sandark7/csso-loader/badges/gpa.svg)](https://codeclimate.com/github/sandark7/csso-loader)
 
 > [CSSO](https://www.npmjs.com/package/csso) loader module for [webpack](https://www.npmjs.com/package/webpack)
 
@@ -114,6 +114,38 @@ module.exports = {
   },
   csso: {
     debug: 3
+  }
+};
+```
+
+### usage
+
+Pass `usage` object parameter to `csso` object in webpack options.
+It accepts arrays of `tags`, `ids` and `classes` to save them in optimized css.
+Also it can use `scopes` to solve problems with restructuring css.
+You can read more about usage data [here](https://github.com/css/csso).
+
+``` javascript
+module.exports = {
+  ...
+  module: {
+    loaders: [
+      {
+        test: /\.css$/,
+        loader: 'css-loader!csso-loader',
+      }
+    ]
+  },
+  csso: {
+    usage: {
+      tags: ['span', 'div'],
+      ids: ['id1'],
+      classes: ['class1', 'class2', 'class3', 'class4']
+      scopes: [
+        ['class1', 'class2'],
+        ['class3', 'class4']
+      ]
+    }
   }
 };
 ```

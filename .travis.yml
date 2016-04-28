@@ -7,3 +7,6 @@ node_js:
 sudo: false
 script:
   - "npm run test"
+addons:
+  code_climate:
+    repo_token: 5bfed542b6b6d5706451d09ec65561c9ea9015d93eda411b9036585115a20132

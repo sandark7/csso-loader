@@ -1,6 +1,6 @@
 {
   "name": "csso-loader",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "CSSO loader module for webpack",
   "keywords": [
     "webpack",

@@ -1,3 +1,7 @@
+# 0.0.6
+
+* Added usage data support
+
 # 0.0.5
 
 * Added functionality of csso object

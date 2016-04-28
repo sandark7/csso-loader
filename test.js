@@ -112,4 +112,35 @@ describe('csso-loader', function() {
       'div,ul{background:#fff}span{background:#00f}'
     );
   });
+  it('should cut unnecessary tags, ids and classes from css due to usage data in csso options', function() {
+    loader.call({
+      options: {
+        csso: {
+          usage: {
+            tags: ['span'],
+            ids: ['id1'],
+            classes: ['class1']
+          }
+        }
+      }
+    }, 'div { background: white; } span { background: blue; } #id1 { background: white; } #id2 { background: red; } .class1 { background: blue; } .class2 { background: green; }').should.be.eql(
+      '.class1,span{background:#00f}#id1{background:#fff}'
+    );
+  });
+  it('should return optimized css due to scopes in usage data in csso options', function() {
+    loader.call({
+      options: {
+        csso: {
+          usage: {
+            scopes: [
+              ['class1', 'class2'],
+              ['class3', 'class4']
+            ]
+          }
+        }
+      }
+    }, '.class1 { background: white; } .class2 { font-size: 20px; } .class3 { background: white; } .class4 { font-size: 25px; }').should.be.eql(
+      '.class1,.class3{background:#fff}.class2{font-size:20px}.class4{font-size:25px}'
+    );
+  });
 });
