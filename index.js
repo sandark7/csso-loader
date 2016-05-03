@@ -33,6 +33,9 @@ module.exports = function(source) {
     if (typeof cssoOptions.usage === 'object') {
       options.usage = cssoOptions.usage;
     }
+    if (typeof cssoOptions.logger === 'function') {
+      options.logger = cssoOptions.logger;
+    }
   }
 
   try {

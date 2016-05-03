@@ -143,4 +143,20 @@ describe('csso-loader', function() {
       '.class1,.class3{background:#fff}.class2{font-size:20px}.class4{font-size:25px}'
     );
   });
+  it('should return debug information in logger function in csso options', function() {
+    var inspect = stderr.inspect();
+    loader.call({
+      options: {
+        csso: {
+          logger: function(stage, data) {
+            console.error(stage, data);
+          }
+        }
+      }
+    }, 'div { background: white; }');
+    inspect.restore();
+    inspect.output[1].should.endWith(
+      '}\n'
+    );
+  });
 });

@@ -1,6 +1,7 @@
 # csso-loader
 [![NPM version](https://img.shields.io/npm/v/csso-loader.svg)](https://www.npmjs.com/package/csso-loader)
 [![Build Status](https://img.shields.io/travis/sandark7/csso-loader.svg)](https://travis-ci.org/sandark7/csso-loader)
+[![Dependency Status](https://img.shields.io/gemnasium/sandark7/csso-loader.svg)](https://gemnasium.com/sandark7/csso-loader)
 [![Code Climate](https://codeclimate.com/github/sandark7/csso-loader/badges/gpa.svg)](https://codeclimate.com/github/sandark7/csso-loader)
 
 > [CSSO](https://www.npmjs.com/package/csso) loader module for [webpack](https://www.npmjs.com/package/webpack)
@@ -145,6 +146,31 @@ module.exports = {
         ['class1', 'class2'],
         ['class3', 'class4']
       ]
+    }
+  }
+};
+```
+
+### logger
+
+Pass `logger` function to `csso` object in webpack options.
+First parameter of `logger` function is stage of csso process.
+And second parameter is result data of this stage of csso process.
+
+``` javascript
+module.exports = {
+  ...
+  module: {
+    loaders: [
+      {
+        test: /\.css$/,
+        loader: 'css-loader!csso-loader',
+      }
+    ]
+  },
+  csso: {
+    logger: function(stage, data) {
+      console.log(stage, data);
     }
   }
 };

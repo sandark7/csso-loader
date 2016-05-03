@@ -1,3 +1,7 @@
+# 0.1.0
+
+* Added logger function support
+
 # 0.0.6
 
 * Added usage data support
