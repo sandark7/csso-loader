@@ -6,7 +6,7 @@
 
 > [CSSO](https://www.npmjs.com/package/csso) loader module for [webpack](https://www.npmjs.com/package/webpack)
 
-Minify incoming CSS with [CSSO](https://www.npmjs.com/package/csso).
+Minify input CSS with [CSSO](https://www.npmjs.com/package/csso).
 
 ## Usage
 
@@ -20,8 +20,7 @@ npm install csso-loader --save-dev
 
 ## Examples
 
-In examples result of [csso-loader](https://www.npmjs.com/package/csso-loader)
-is processed with [css-loader](https://www.npmjs.com/package/css-loader).
+Using [csso-loader](https://www.npmjs.com/package/csso-loader) with [css-loader](https://www.npmjs.com/package/css-loader).
 
 ``` javascript
 module.exports = {
@@ -43,8 +42,8 @@ module.exports = {
 
 Default: `true`
 
-By default CSSO uses structure minimization for maximum compression.
-Pass `-restructure` instead if you want to disable this feature.
+`csso` performs structural optimization for better compression by default.
+Use `-restructure` in case you want to disable it.
 
 ``` javascript
 module.exports = {
@@ -60,7 +59,7 @@ module.exports = {
 };
 ```
 
-Also you can pass `restructure` boolean parameter to `csso` object in webpack options.
+Also it can to be disabled by `restructure` boolean option in `csso` object of webpack config.
 
 ``` javascript
 module.exports = {
@@ -83,7 +82,7 @@ module.exports = {
 
 Default: `false`
 
-Pass `debug` to get debugging information about the minification process.
+`debug` is using to get details about the minification process.
 
 ``` javascript
 module.exports = {
@@ -99,7 +98,7 @@ module.exports = {
 };
 ```
 
-Also you can pass `debug` parameter to `csso` object in webpack options.
+Also you can set `debug` option in `csso` object of webpack config.
 It can be boolean or a positive number from 1 to 3 (greater number for more details).
 
 ``` javascript
@@ -121,10 +120,7 @@ module.exports = {
 
 ### usage
 
-Pass `usage` object parameter to `csso` object in webpack options.
-It accepts arrays of `tags`, `ids` and `classes` to save them in optimized css.
-Also it can use `scopes` to solve problems with restructuring css.
-You can read more about usage data [here](https://github.com/css/csso).
+With `usage` option you can set data about CSS usage. For example, white lists (`tags`, `ids` and `classes`) can be set to filter unused selectors and related CSS rules as well. See [Usage data](https://github.com/css/csso#usage-data) in `csso` documentation for more details.
 
 ``` javascript
 module.exports = {
@@ -153,9 +149,8 @@ module.exports = {
 
 ### logger
 
-Pass `logger` function to `csso` object in webpack options.
-First parameter of `logger` function is stage of csso process.
-And second parameter is result data of this stage of csso process.
+To log how CSS is transforming through compression stages use `logger` option.
+First argument is a stage name, and second one is AST of current state CSS or `null`.
 
 ``` javascript
 module.exports = {
@@ -169,8 +164,8 @@ module.exports = {
     ]
   },
   csso: {
-    logger: function(stage, data) {
-      console.log(stage, data);
+    logger: function(stage, ast) {
+      console.log(stage, ast);
     }
   }
 };
