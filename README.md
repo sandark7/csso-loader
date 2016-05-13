@@ -3,6 +3,7 @@
 [![Build Status](https://img.shields.io/travis/sandark7/csso-loader.svg)](https://travis-ci.org/sandark7/csso-loader)
 [![Dependency Status](https://img.shields.io/gemnasium/sandark7/csso-loader.svg)](https://gemnasium.com/sandark7/csso-loader)
 [![Code Climate](https://codeclimate.com/github/sandark7/csso-loader/badges/gpa.svg)](https://codeclimate.com/github/sandark7/csso-loader)
+[![Test Coverage](https://codeclimate.com/github/sandark7/csso-loader/badges/coverage.svg)](https://codeclimate.com/github/sandark7/csso-loader/coverage)
 
 > [CSSO](https://www.npmjs.com/package/csso) loader module for [webpack](https://www.npmjs.com/package/webpack)
 
@@ -59,7 +60,7 @@ module.exports = {
 };
 ```
 
-Also it can to be disabled by `restructure` boolean option in `csso` object of webpack config.
+Also it can be disabled by `restructure` boolean option in `csso` object of webpack config.
 
 ``` javascript
 module.exports = {
@@ -114,6 +115,47 @@ module.exports = {
   },
   csso: {
     debug: 3
+  }
+};
+```
+
+### comments
+
+Default: `exclamation` or `true`
+
+`csso` leave all exclamation comments by default (i.e. `/*! .. */`).
+Use '-comments' to remove all comments.
+
+``` javascript
+module.exports = {
+  ...
+  module: {
+    loaders: [
+      {
+        test: /\.css$/,
+        loader: 'css-loader!csso-loader?-comments',
+      }
+    ]
+  }
+};
+```
+
+Also you can set `comments` option in `csso` object of webpack config.
+It can be boolean or string (use `first-exclamation` to remove all comments except first one with exclamation).
+
+``` javascript
+module.exports = {
+  ...
+  module: {
+    loaders: [
+      {
+        test: /\.css$/,
+        loader: 'css-loader!csso-loader',
+      }
+    ]
+  },
+  csso: {
+    comments: 'first-exclamation'
   }
 };
 ```

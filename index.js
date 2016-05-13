@@ -23,6 +23,10 @@ module.exports = function(source) {
     options.restructure = query.restructure;
   }
 
+  if (typeof query.comments === 'boolean') {
+    options.comments = query.comments;
+  }
+
   if (typeof cssoOptions === 'object') {
     if (typeof cssoOptions.debug === 'boolean' || [1, 2, 3].indexOf(cssoOptions.debug) !== -1) {
       options.debug = cssoOptions.debug;
@@ -35,6 +39,9 @@ module.exports = function(source) {
     }
     if (typeof cssoOptions.logger === 'function') {
       options.logger = cssoOptions.logger;
+    }
+    if (typeof cssoOptions.comments === 'boolean' || ['exclamation', 'first-exclamation'].indexOf(cssoOptions.comments) !== -1) {
+      options.comments = cssoOptions.comments;
     }
   }
 

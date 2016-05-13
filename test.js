@@ -159,4 +159,39 @@ describe('csso-loader', function() {
       '}\n'
     );
   });
+  it('should leave exclamation comments in optimized css by default', function() {
+    loader.call({}, '/*! comment */ div { background: white; } /*! comment */ /* comment */').should.be.eql(
+      '/*! comment */\ndiv{background:#fff}\n/*! comment */'
+    );
+  });
+  it('should leave only first exclamation comment in optimized css due to first-exclamation in comments in csso options', function() {
+    loader.call({
+      options: {
+        csso: {
+          comments: 'first-exclamation'
+        }
+      }
+    }, '/*! comment */ div { background: white; } /*! comment */').should.be.eql(
+      '/*! comment */\ndiv{background:#fff}'
+    );
+  });
+
+  it('should cut all comments in optimized css due to false in comments in csso options', function() {
+    loader.call({
+      options: {
+        csso: {
+          comments: false
+        }
+      }
+    }, '/*! comment */ div { /*! comment */ background: white; }').should.startWith(
+      'div{background'
+    );
+  });
+  it('should cut all comments in optimized css in case of -comments parameter', function() {
+    loader.call({
+      query: '?-comments'
+    }, '/*! comment */ div { /*! comment */ background: white; }').should.startWith(
+      'div{background'
+    );
+  });
 });

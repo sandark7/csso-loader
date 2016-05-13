@@ -10,7 +10,9 @@
     "minify"
   ],
   "scripts": {
-    "test": "mocha -R spec ./test.js"
+    "test": "mocha -R spec",
+    "coverage": "istanbul cover _mocha --report lcovonly -R",
+    "travis": "npm run test && npm run coverage"
   },
   "homepage": "https://github.com/sandark7/csso-loader",
   "bugs": {
@@ -27,13 +29,14 @@
   },
   "main": "index.js",
   "dependencies": {
-    "csso": "^2.0.0",
+    "csso": "^2.1.0",
     "loader-utils": "^0.2.14"
   },
   "devDependencies": {
-    "should": "8.3.1",
-    "mocha": "2.4.5",
-    "test-console": "1.0.0"
+    "istanbul": "^0.4.3",
+    "mocha": "^2.4.5",
+    "should": "^8.3.1",
+    "test-console": "^1.0.0"
   },
   "engines": {
     "node": ">=0.10.0"
