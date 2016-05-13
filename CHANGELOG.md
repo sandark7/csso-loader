@@ -1,3 +1,7 @@
+# 0.2.0 (13.05.2016)
+
+* Added comments support and coverage
+
 # 0.1.0
 
 * Added logger function support
