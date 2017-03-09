@@ -28,7 +28,7 @@ describe('csso-loader', function() {
     loader.call({}, 'div { background=white; }');
     inspect.restore();
     inspect.output.should.be.eql([
-      ' \nCssSyntaxError undefined: Colon is expected\nLine: 1\nColumn: 17\n'
+      ' \nCssSyntaxError : Colon is expected\nLine: 1\nColumn: 17\n'
     ]);
   });
   it('should return debug information in case of debug parameter', function() {
