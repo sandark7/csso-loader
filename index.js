@@ -5,7 +5,7 @@ var csso = require('csso');
 var loaderUtils = require('loader-utils');
 
 module.exports = function(source) {
-  var query = loaderUtils.parseQuery(this.query);
+  var query = loaderUtils.getOptions(this) || {};
   var cssoOptions = this.options ? this.options.csso : false;
   var filename = path.basename(this.resourcePath);
   var options = {};
