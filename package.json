@@ -1,6 +1,6 @@
 {
   "name": "csso-loader",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "CSSO loader module for webpack",
   "keywords": [
     "webpack",
@@ -29,7 +29,7 @@
   },
   "main": "index.js",
   "dependencies": {
-    "csso": "^3.0.0",
+    "csso": "^3.0.1",
     "loader-utils": "^1.0.3"
   },
   "devDependencies": {
