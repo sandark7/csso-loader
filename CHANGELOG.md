@@ -1,3 +1,7 @@
+# 0.3.0
+
+* Updated CSSO version to 3.0.0
+
 # 0.2.0 (13.05.2016)
 
 * Added comments support and coverage

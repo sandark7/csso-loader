@@ -2,12 +2,11 @@
 [![NPM version](https://img.shields.io/npm/v/csso-loader.svg)](https://www.npmjs.com/package/csso-loader)
 [![Build Status](https://img.shields.io/travis/sandark7/csso-loader.svg)](https://travis-ci.org/sandark7/csso-loader)
 [![Dependency Status](https://img.shields.io/gemnasium/sandark7/csso-loader.svg)](https://gemnasium.com/sandark7/csso-loader)
+[![NPM downloads](https://img.shields.io/npm/dm/csso-loader.svg)](https://www.npmjs.com/package/csso-loader)
 [![Code Climate](https://codeclimate.com/github/sandark7/csso-loader/badges/gpa.svg)](https://codeclimate.com/github/sandark7/csso-loader)
 [![Test Coverage](https://codeclimate.com/github/sandark7/csso-loader/badges/coverage.svg)](https://codeclimate.com/github/sandark7/csso-loader/coverage)
 
-> [CSSO](https://www.npmjs.com/package/csso) loader module for [webpack](https://www.npmjs.com/package/webpack)
-
-Minify input CSS with [CSSO](https://www.npmjs.com/package/csso).
+[CSSO](https://www.npmjs.com/package/csso) loader module for [webpack](https://www.npmjs.com/package/webpack).
 
 ## Usage
 
