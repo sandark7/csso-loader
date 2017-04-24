@@ -1,6 +1,6 @@
 {
   "name": "csso-loader",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "CSSO loader module for webpack",
   "keywords": [
     "webpack",
@@ -10,9 +10,8 @@
     "minify"
   ],
   "scripts": {
-    "test": "mocha -R spec",
-    "coverage": "istanbul cover _mocha --report lcovonly -R",
-    "travis": "npm run test && npm run coverage"
+    "test": "jest",
+    "travis": "jest --coverage"
   },
   "homepage": "https://github.com/sandark7/csso-loader",
   "bugs": {
@@ -30,16 +29,13 @@
   "main": "index.js",
   "dependencies": {
     "csso": "^3.0.1",
-    "loader-utils": "^1.0.3"
+    "loader-utils": "^1.1.0"
   },
   "devDependencies": {
-    "istanbul": "^0.4.5",
-    "mocha": "^3.2.0",
-    "should": "^11.2.1",
-    "test-console": "^1.0.0"
+    "jest": "^19.0.2"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=4.0.0"
   },
   "license": "MIT"
 }
