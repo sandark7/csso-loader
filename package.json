@@ -28,7 +28,7 @@
   },
   "main": "index.js",
   "dependencies": {
-    "csso": "^3.0.1",
+    "csso": "^4.0.2",
     "loader-utils": "^1.1.0"
   },
   "devDependencies": {
